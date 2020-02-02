@@ -11,20 +11,44 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Test" startnode="1" creator="Twine" creator-version="2.3.5" ifid="0FD32794-722F-42CA-8DC9-9D946083DFBF" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-passage {
+<tw-storydata name="Test" startnode="1" creator="Twine" creator-version="2.3.5" ifid="0FD32794-722F-42CA-8DC9-9D946083DFBF" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+
+/* Global styles */
+
+tw-story {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.profile-pic {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
+/* Narration sections */
+
+tw-passage {
   position: relative;
-  max-width: 800px;
-  background: hsl(220, 72%, 85%);
+  max-width: 33.33em;
+  background: hsl(220, 72%, 90%);
   color: hsl(261, 52%, 14%);
   z-index: 0;
-  padding: 20px;
+  padding: 1em;
 }
 
 section {
   position: relative;
   background: #fff;
   color: hsl(261, 52%, 14%);
-  padding: 20px;
+  padding: 1em;
 }
 
 section:before,
@@ -50,27 +74,103 @@ section:after {
 
 section img { width: 100%; }
 
-tw-expression[name="link-goto"] {
+tw-passage > tw-expression[name="link-goto"] {
   display: block;
   background: hsla(115, 82%, 22%, .88);
-  padding: 5px 10px;
   transform: skew(-5deg);
+  transition: all 0.5s ease-in-out;
 }
 
-tw-expression[name="link-goto"]:hover {
+tw-passage > tw-expression[name="link-goto"]:hover {
   background: hsla(115, 82%, 22%, 1);
 }
 
-tw-expression[name="link-goto"],
-tw-expression[name="link-goto"] > tw-link {
+tw-passage > tw-passage > tw-expression[name="link-goto"],
+tw-passage > tw-expression[name="link-goto"] > tw-link,
+tw-passage > tw-expression[name="link-goto"] > tw-link:hover {
   color: #fff;
+}
+
+tw-passage > tw-expression[name="link-goto"] > tw-link {
+  display: block;
+  padding: 0.25em 0.5em;
+  transform: skew(5deg);
+}
+
+
+
+/* Reviews section */
+
+tw-story[tags="reviews"] {
+  background: hsl(15,10%,66%);
+}
+
+tw-passage[tags="reviews"] {
+  border-radius: .5em;
+  background: #eee;
+  box-shadow: 0 0 1em rgba(0,0,0,.4);
+}
+
+tw-passage[tags="reviews"] strong,
+tw-passage[tags="reviews"] b {
+  color: hsl(345, 81%, 39%);
+}
+
+tw-passage[tags="reviews"] header {
+  background: hsl(15, 81%, 39%) url(https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-owner.jpg?raw=true) top left no-repeat;
+  background-size: 100%;
+  box-shadow: 0 0.25em 0 #ccc;
+  margin: -1em -1em 0;
+  padding: 1em;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  color: #fff;
+}
+
+tw-passage[tags="reviews"] article {
+  position: relative;
+  padding: 1em;
+  background: #fff;
+}
+
+tw-passage[tags="reviews"] article:before {
+  position: absolute;
+  content: ' ';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #ccc;
+  transform: scale(1.02, 1.07) rotate(-1deg);
+}
+
+tw-passage[tags="reviews"] article .profile-pic {
+  float: left;
+  margin-right: 1em;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Image test" tags="" position="524,319.5" size="100,100">## Image test
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-pet.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-owner.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case2-pet.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case2-owner.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case3-pet.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
-&lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case3-owner.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;</tw-passagedata></tw-storydata>
+&lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case3-owner.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
+&lt;section&gt;[[Test action-&gt;Image test]]&lt;/section&gt;
+
+[[Test action-&gt;Image test]]
+[[Reviews]]</tw-passagedata><tw-passagedata pid="2" name="Reviews" tags="reviews" position="524,469.5" size="100,100">&lt;header&gt;&lt;h3&gt;INSERT NAME HERE reviews&lt;/h3&gt;&lt;/header&gt;
+&lt;article&gt;&lt;img class=&quot;profile-pic&quot; src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-owner.jpg?raw=true&quot; alt=&quot;Owner picture&quot; /&gt; **Review author or title**
+★☆☆☆☆
+Lorem et ipsum dolor sit amet
+&lt;/article&gt;
+&lt;article&gt;&lt;img class=&quot;profile-pic&quot; src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-owner.jpg?raw=true&quot; alt=&quot;Owner picture&quot; /&gt; **Review author or title**
+★☆☆☆☆
+Lorem et ipsum dolor sit amet
+&lt;/article&gt;
+&lt;article&gt;&lt;img class=&quot;profile-pic&quot; src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-owner.jpg?raw=true&quot; alt=&quot;Owner picture&quot; /&gt; **Review author or title**
+★☆☆☆☆
+Lorem et ipsum dolor sit amet
+&lt;/article&gt;</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
