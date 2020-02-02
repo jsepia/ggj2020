@@ -74,6 +74,12 @@ section:after {
 
 section img { width: 100%; }
 
+
+
+/* Goto links */
+
+.choices tw-expression[name="link-goto"],
+.choices tw-expression[name="link"] + tw-hook,
 tw-passage > tw-expression[name="link-goto"] {
   display: block;
   background: hsla(115, 82%, 22%, .88);
@@ -81,16 +87,26 @@ tw-passage > tw-expression[name="link-goto"] {
   transition: all 0.5s ease-in-out;
 }
 
+.choices tw-expression[name="link-goto"]:hover,
+.choices tw-expression[name="link"] + tw-hook:hover,
 tw-passage > tw-expression[name="link-goto"]:hover {
   background: hsla(115, 82%, 22%, 1);
 }
 
-tw-passage > tw-passage > tw-expression[name="link-goto"],
+.choices tw-expression[name="link-goto"],
+.choices tw-expression[name="link"] + tw-hook,
+.choices tw-expression[name="link-goto"] > tw-link,
+.choices tw-expression[name="link"] + tw-hook > tw-link,
+.choices tw-expression[name="link-goto"] > tw-link:hover,
+.choices tw-expression[name="link"] + tw-hook > tw-link:hover,
+tw-passage > tw-expression[name="link-goto"],
 tw-passage > tw-expression[name="link-goto"] > tw-link,
 tw-passage > tw-expression[name="link-goto"] > tw-link:hover {
   color: #fff;
 }
 
+.choices tw-link,
+.choices tw-expression[name="link"] + tw-hook > tw-link,
 tw-passage > tw-expression[name="link-goto"] > tw-link {
   display: block;
   padding: 0.25em 0.5em;
@@ -150,16 +166,24 @@ tw-passage[tags="reviews"] article .profile-pic {
   float: left;
   margin-right: 1em;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Image test" tags="" position="524,319.5" size="100,100">## Image test
+(set: $variabley to &quot;true&quot;)
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-pet.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
-&lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-owner.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
+&lt;section&gt;&lt;img src=&quot;https://jsepia.github.io/01_placeholders/case1-owner.jpg&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case2-pet.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case2-owner.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case3-pet.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
-&lt;section&gt;&lt;img src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case3-owner.jpg?raw=true&quot; alt=&quot;Dashiell joins the app on video. You hold the phone while he chats with your pet.&quot; /&gt;&lt;/section&gt;
+&lt;section&gt;&lt;img src=&quot;jsepia.github.io/ggj2020/01_placeholders/case3-owner.jpg&quot; alt=&quot;Orion picture&quot; /&gt;&lt;/section&gt;
 &lt;section&gt;[[Test action-&gt;Image test]]&lt;/section&gt;
 
+The variable is $variabley
+
+&lt;div class=&quot;choices&quot;&gt;
 [[Test action-&gt;Image test]]
-[[Reviews]]</tw-passagedata><tw-passagedata pid="2" name="Reviews" tags="reviews" position="524,469.5" size="100,100">&lt;header&gt;&lt;h3&gt;INSERT NAME HERE reviews&lt;/h3&gt;&lt;/header&gt;
+[[Reviews]]
+(link: &quot;Simple link&quot;)[Test]
+(link-goto: &quot;Link with macro; variable equals &quot; + $variabley, &quot;Reviews&quot;)
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="2" name="Reviews" tags="reviews" position="524,469.5" size="100,100">&lt;header&gt;&lt;h3&gt;INSERT NAME HERE reviews&lt;/h3&gt;&lt;/header&gt;
 &lt;article&gt;&lt;img class=&quot;profile-pic&quot; src=&quot;https://github.com/jsepia/ggj2020/blob/master/01_placeholders/case1-owner.jpg?raw=true&quot; alt=&quot;Owner picture&quot; /&gt; **Review author or title**
 ★☆☆☆☆
 Lorem et ipsum dolor sit amet
